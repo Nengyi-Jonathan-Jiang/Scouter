@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Scouter | Join</title>
+        <style>
+            body{
+                --vw: min(1vw, 1.6vh);
+            }
+            * {
+                box-sizing: border-box;
+                font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+                font-size: calc(2 * var(--vw));
+            }
+            body {
+                position:absolute;top:0;left:0;width:100vw;height:100vh;margin:0;padding:0;
+                background-color: #435165;
+                display:flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+            div{display:block}
+            .login {
+                width: calc(64 * var(--vw));
+                background-color: #ffffff;
+                box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+            }
+            .login h1 {
+                text-align: center;
+                color: #5b6574;
+                font-size: calc(3 * var(--vw));
+                padding: calc(2.5 * var(--vw)) 0 calc(2.5 * var(--vw)) 0;
+                border-bottom: 1px solid #dee0e4;
+            }
+            .login form {
+                padding-top: calc(2.5 * var(--vw));
+                height: calc(31 * var(--vw));
+            }
+            .login form div{
+                width:100%;
+                padding: 0 calc(2 * var(--vw)) 0 calc(2 * var(--vw));
+            }
+            .login form label {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: calc(12 * var(--vw));
+                height: calc(7 * var(--vw));
+                background-color: #3274d6;
+                color: #ffffff;
+            }
+            .login form input[type="password"], .login form input[type="text"], .login form select{
+                width: calc(48 * var(--vw));
+                height: calc(7 * var(--vw));
+                border: 1px solid #dee0e4;
+                margin-bottom: calc(2 * var(--vw));
+                padding: 0 calc(2 * var(--vw));
+            }
+            .login form input[type="submit"] {
+                width: 100%;
+                padding: calc(2 * var(--vw));
+                margin-top: calc(2 * var(--vw));
+                background-color: #3274d6;
+                border: 0;
+                cursor: pointer;
+                font-weight: bold;
+                color: #ffffff;
+                transition: background-color 0.2s;
+            }
+            .login form input[type="submit"]:hover {
+            background-color: #2868c7;
+                transition: background-color 0.2s;
+            }
+            a{
+                width: 100%;
+                padding: 15px;
+                margin-top: 0px;
+                background-color: #3274d6;
+                border: 0;
+                cursor: pointer;
+                font-weight: bold;
+                color: #ffffff;
+                transition: background-color 0.2s;
+                text-align: center;
+                border-top: 1px solid #2b61b3;
+            }
+            a:hover{
+                background-color: #2868c7;
+                transition: background-color 0.2s;
+            }
+        </style>
+    </head>
+    <body>        
+        <div class="login">
+            <h1>Join Session</h1>
+            <form action="/join/action" method="post">
+                <div>
+                    <label for="roomName">Session</label><input type="text" name="roomName" placeholder="Generic_Room" id="roomName" required>
+                </div>
+                <div>
+                    <label for="roomCode">Code</label><input type="password" name="roomCode" placeholder="12345" id="roomCode" required>
+                </div>
+                <div>
+                    <input type="submit" value="Join Scouting Session">
+                </div>
+            </form>
+        </div>
+        <script>
+            if(window.location.hash=="#invalidCode") alert("Invalid room code!"), window.location.hash="";
+        </script>
+    </body>
+</html>

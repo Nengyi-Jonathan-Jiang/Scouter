@@ -1,0 +1,167 @@
+body{
+    position:absolute;top:0;left:0;
+    width: 100vw; height:100vh; padding:0;margin:0;
+    touch-action: manipulation;
+    user-select: none;
+}
+
+div#content{
+    color: white;
+    --font-size: 3vw;
+    font-size: var(--font-size);
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-weight: bold;
+}
+
+
+button,textarea,select{
+    border: none; outline: none;
+    font: inherit;
+    color: inherit;
+}
+
+.wrapper.count>div>button{
+    background-color: transparent;
+    flex-grow: 1;
+}
+
+.wrapper.count>div>button:first-child{
+    text-align: right;
+}
+.wrapper.count>div>button:last-child{
+    text-align: left;
+}
+
+.wrapper.select select,
+.wrapper.text textarea{
+    color: black;
+    font-weight: normal;
+}
+
+.wrapper.text div{
+    width: 90%;
+}
+
+.wrapper.text span:last-child{
+    width: 100%;
+    background-color: white;
+    display: block;
+    color: black;
+    font-weight: normal;
+    outline: none;
+    max-height: calc(100vh - 20vw);
+    overflow:auto;
+}
+
+.wrapper span.display-name{
+    margin-bottom: 1vw;
+}
+
+.wrapper.count>div>span{
+    flex-grow: 0;
+}
+
+.wrapper.count>div{
+    width: 100%;
+    display:flex;
+    flex-direction:row;
+}
+
+.finish-btn{
+    position:absolute; bottom: 0;
+    height: calc(10vw);
+    width: 100vw;
+    font-size: 5vw;
+    border: none;
+    outline: none;
+    background-color: #294;
+    transition: background-color;
+    transition-duration: 0.125s;
+}
+.finish-btn:hover{
+    background-color: #084;
+}
+
+.wrapper:nth-child(2n){
+    background-color: #f80;
+}
+
+.wrapper:nth-child(2n):hover{
+    background-color: #e70;
+}
+.wrapper:nth-child(2n + 1){
+    background-color: #00f;
+}
+.wrapper:nth-child(2n + 1):hover{
+    background-color: #00c;
+}
+.wrapper:hover{
+    transition: background-color;
+    transition-duration: 0.125s;
+}
+
+@media (orientation:landscape){
+    div#content[data-N="4"] .wrapper:nth-child(2),
+    div#content[data-N="4"] .wrapper:nth-child(3){
+        background-color: #f80;
+    }
+    div#content[data-N="4"] .wrapper:nth-child(2):hover,
+    div#content[data-N="4"] .wrapper:nth-child(3):hover{
+        background-color: #e70;
+    }
+    div#content[data-N="4"] .wrapper:nth-child(1),
+    div#content[data-N="4"] .wrapper:nth-child(4){
+        background-color: #00f;
+    }
+    div#content[data-N="4"] .wrapper:nth-child(1):hover,
+    div#content[data-N="4"] .wrapper:nth-child(4):hover{
+        background-color: #00c;
+    }
+}
+
+div#content .wrapper{
+    display:inline-block;
+    width: calc(100vw / var(--N));
+    height: calc(100vh - 10vw);
+    
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div#content[data-N="4"] .wrapper{
+    width: 50vw;
+    height: calc((100vh - 10vw) / 2);
+}
+
+input.number-input-simple{
+    width: calc(var(--font-size) * 1.5);
+    background: transparent;
+    border: none;
+    outline: none;
+    color: inherit;
+    font: inherit;
+    text-align: center;
+}
+input.number-input-simple::-webkit-outer-spin-button,
+input.number-input-simple::-webkit-inner-spin-button{
+    display:none;
+}
+input.number-input-simple{
+    -moz-appearance: textfield;
+}
+
+@media (orientation:portrait) {
+    .wrapper,
+    div#content[data-N="4"] .wrapper{
+        width: 100vw !important;
+        height: calc((100vh - 10vw) / var(--N)) !important;
+    }
+    div#content{
+        --font-size: 6vw;
+    }
+    .wrapper.text span:last-child{
+        max-height: calc(((100vh - 10vw) / var(--N)) - 15vw);
+    }
+}

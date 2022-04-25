@@ -1,0 +1,73 @@
+{
+    "rooms": {
+        "Generic_Room": {
+            "roomCode": "12345",
+            "data": {
+                
+            },
+            "steps": [
+                [
+                    {
+                        "name": "Auton-taxi",
+                        "display-name": "Autonomous - Taxi",
+                        "type": "BOOLEAN"
+                    },
+                    {
+                        "name": "Auton-lower",
+                        "display-name": "Autonomous - lower hub",
+                        "type": "COUNT"
+                    },
+                    {
+                        "name": "Auton-upper",
+                        "display-name": "Autonomous - upper hub",
+                        "type": "COUNT"
+                    }
+                ],
+                [
+                    {
+                        "name": "Teleop-lower",
+                        "display-name": "Teleop - lower hub",
+                        "type": "COUNT"
+                    },
+                    {
+                        "name": "Teleop-upper",
+                        "display-name": "Teleop - upper hub",
+                        "type": "COUNT"
+                    }
+                ],
+                [
+                    {
+                        "name": "Climb-height",
+                        "display-name": "Climb height",
+                        "type": "SELECT",
+                        "options": {
+                            "None": 0,
+                            "Low": 5,
+                            "Mid": 8,
+                            "High": 10,
+                            "Traversal": 15
+                        }
+                    },
+                    {
+                        "name": "Climb-speed",
+                        "display-name": "Climbing speed",
+                        "type": "SELECT",
+                        "options": {
+                            "No climb": 0,
+                            "<= 15 secs": 15,
+                            "<= 30 secs": 30,
+                            "More than 30 secs": 40
+                        }
+                    }
+                ],
+                [
+                    {
+                        "name": "comments",
+                        "display-name": "Other comments",
+                        "type": "TEXT"
+                    }
+                ]
+            ]
+        }
+    }
+}

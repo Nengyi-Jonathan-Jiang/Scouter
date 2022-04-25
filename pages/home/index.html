@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Scouter</title>
+        <style>
+            body{
+                position:absolute;top:0;left:0;padding:0;margin:0;
+            }
+            p {
+                width: calc(100vw - (11pt * 2));
+                height: calc(50vh - (11pt * 2));
+                text-align: center;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-size: calc((100vw - (11pt * 2)) * 0.07);
+                color: white;
+                font-weight: bold;
+                padding: 11pt;
+                transition: background-color;
+                transition-duration: .25s;
+                margin:0;
+                display:flex; 
+                justify-content: space-around;
+                align-items: center;
+            }
+            a{color: inherit;}
+            a:visited,a:link,a:hover,a:active{
+                text-decoration: none;
+            }
+            p#join-p{background-color: #f70}
+            p#monitor-p{background-color: #00f}
+            p#join-p:hover, p#monitor-p:hover{background-color: #0a0}
+        </style>
+    </head>
+    <body>
+        <p id="join-p" onclick="this.children[0].click()">
+            <a href="/join/">Join a Scouting session</a>
+        </p>
+        <p id="monitor-p" onclick="this.children[0].click()">
+            <a href="/monitor/">Monitor a Scouting session</a>
+        </p>
+    </body>
+</html>
